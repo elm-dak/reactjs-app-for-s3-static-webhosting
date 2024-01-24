@@ -3,16 +3,16 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 12
     commands:
       - ls -la
       - echo installing "node modules"
-      - yarn install 
+      - npm install --legacy-peer-deps
 
   pre_build:
     commands:
       - echo Installing source NPM dependiencies ...
-      - yarn build 
+      - npm run build 
       - ls -la
   post_build:
     commands:
